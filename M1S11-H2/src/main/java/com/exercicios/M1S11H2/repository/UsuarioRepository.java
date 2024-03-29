@@ -10,10 +10,11 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<UsuarioEntitie, Long> {
-//    @Modifying
-//    @Transactional
-//    @Query(value = "UPDATE Usuario SET nome = :nome  WHERE id = :id", nativeQuery = true)
-//    int update(@Param("id") Long id,
-//               @Param("nome") String nome
-//    );
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE Usuario SET nome = :nome, senha = :senha  WHERE id = :id", nativeQuery = true)
+    int update(@Param("id") Long id,
+               @Param("nome") String nome,
+               @Param("senha") String senha
+    );
 }
