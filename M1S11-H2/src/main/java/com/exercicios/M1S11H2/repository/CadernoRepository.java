@@ -16,6 +16,6 @@ public interface CadernoRepository extends JpaRepository<CadernoEntitie, Long> {
     @Query(value = "UPDATE Caderno SET nota = :nota, id_usuario = :id_usuario  WHERE id = :id", nativeQuery = true)
     int update(@Param("id") Long id,
                @Param("nota") int nota,
-               @Param("id_usuario") long id_usuario
+               @Param("id_usuario") UsuarioEntitie id_usuario
     );
 }

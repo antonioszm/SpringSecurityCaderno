@@ -5,10 +5,12 @@ import com.exercicios.M1S11H2.entities.NotaEntitie;
 import com.exercicios.M1S11H2.repository.CadernoRepository;
 import com.exercicios.M1S11H2.repository.NotaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class NotaService {
     @Autowired
 

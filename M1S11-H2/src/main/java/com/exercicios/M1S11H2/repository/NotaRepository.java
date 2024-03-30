@@ -1,6 +1,8 @@
 package com.exercicios.M1S11H2.repository;
 
+import com.exercicios.M1S11H2.entities.CadernoEntitie;
 import com.exercicios.M1S11H2.entities.NotaEntitie;
+import com.exercicios.M1S11H2.entities.UsuarioEntitie;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -14,9 +16,9 @@ public interface NotaRepository extends JpaRepository<NotaEntitie, Long> {
     @Transactional
     @Query(value = "UPDATE Nota SET title = :title, content = :content, id_caderno = :id_caderno, id_usuario = :id_usuario  WHERE id = :id", nativeQuery = true)
     int update(@Param("id") Long id,
-               @Param("nota") String title,
+               @Param("title") String title,
                @Param("content") String content,
-               @Param("id_caderno") long id_caderno,
-               @Param("id_usuario") long id_usuario
+               @Param("id_caderno") CadernoEntitie id_caderno,
+               @Param("id_usuario") UsuarioEntitie id_usuario
     );
 }
