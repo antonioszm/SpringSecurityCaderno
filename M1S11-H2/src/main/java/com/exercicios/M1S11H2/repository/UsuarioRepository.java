@@ -17,4 +17,8 @@ public interface UsuarioRepository extends JpaRepository<UsuarioEntitie, Long> {
                @Param("nome") String nome,
                @Param("senha") String senha
     );
+
+
+    @Query("SELECT u FROM UsuarioEntitie u WHERE u.nome = :nome")
+    UsuarioEntitie findByNome(@Param("nome") String nome);
 }
