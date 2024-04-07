@@ -12,7 +12,7 @@ public class CadernoEntitie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private int nota;
+    private String nome;
 
     @ManyToOne
     @JoinColumn(name = "id_usuario", nullable = false)

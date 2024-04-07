@@ -37,6 +37,8 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(authorize -> authorize
+                                .requestMatchers("/caderno/**").permitAll()
+                                .requestMatchers("/notas/**").permitAll()
                                 .requestMatchers("/teste/**").permitAll()
                                 .requestMatchers("/usuario/cadastro").permitAll()
                                 .requestMatchers("/login").permitAll()

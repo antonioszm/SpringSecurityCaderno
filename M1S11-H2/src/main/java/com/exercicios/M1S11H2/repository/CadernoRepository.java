@@ -13,9 +13,9 @@ import org.springframework.stereotype.Repository;
 public interface CadernoRepository extends JpaRepository<CadernoEntitie, Long> {
     @Modifying
     @Transactional
-    @Query(value = "UPDATE Caderno SET nota = :nota, id_usuario = :id_usuario  WHERE id = :id", nativeQuery = true)
+    @Query(value = "UPDATE Caderno SET nome = :nome, id_usuario = :id_usuario  WHERE id = :id", nativeQuery = true)
     int update(@Param("id") Long id,
-               @Param("nota") int nota,
+               @Param("nome") String nome,
                @Param("id_usuario") UsuarioEntitie id_usuario
     );
 }
